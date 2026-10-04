@@ -5,5 +5,6 @@ Outside yardsticks AIEN is measured against (MAX, llama.cpp, vLLM). Never part o
 | Yardstick | Path |
 |---|---|
 | Modular MAX, Nemotron-H KV-head expansion | `yardsticks/modular-nemotron-h-kvexp/` |
+| TinyLlama reference oracle (HF Transformers, CPU FP32) | `yardsticks/tinyllama-oracle/` |
 
 Python is tolerated here only until it is replaced by Rust.
