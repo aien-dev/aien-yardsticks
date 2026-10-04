@@ -1,3 +1,9 @@
+> **YARDSTICK ONLY. Never part of AIEN. Nothing here ships in AIEN.**
+>
+> This is the Nemotron-H KV-head-expansion comparison adapter for Modular MAX, kept so AIEN can be measured against MAX.
+> It was moved here, with its git history, from `aien-dev/aien-sovereign-core` (commit `5fdab70`, path `modular/nemotron_h_kvexp`) because AIEN repos may contain no Python.
+> The Python in this folder is scheduled for replacement by Rust (see the "Replace the Python yardstick with Rust" issue in this repo).
+
 # KV-Head Expanded Nemotron-H Architecture for Modular MAX
 
 Custom architecture adapter enabling high-throughput serving of NVIDIA Nemotron-H models (such as `nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16`) on Modular MAX.
