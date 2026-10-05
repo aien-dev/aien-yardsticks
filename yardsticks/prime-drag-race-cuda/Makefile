@@ -22,7 +22,9 @@ $(BUILD)/build_info.h: FORCE | $(BUILD)
 	  "$(NVCC_VERSION)" "$(NVCC_FLAGS)" "$(OMEGA_COMMIT)" "$(if $(OMEGA_DIRTY),+dirty)" "$(YARD_COMMIT)" > $@.tmp
 	@cmp -s $@.tmp $@ && rm $@.tmp || mv $@.tmp $@
 
-$(BUILD)/prime_race_impl.o: $(PRDIR)/prime_race_impl.c | $(BUILD)
+# build_info.h changes whenever a recorded commit changes, so the baked-in
+# PR_SOURCE_COMMIT label can never go stale.
+$(BUILD)/prime_race_impl.o: $(PRDIR)/prime_race_impl.c $(PRDIR)/prime_race_impl.h $(BUILD)/build_info.h | $(BUILD)
 	nice -n 19 $(CC) $(CFLAGS_HOST) -I$(PRDIR) \
 	  -DPR_SOURCE_COMMIT='"omega=$(OMEGA_COMMIT)$(if $(OMEGA_DIRTY),+dirty);yardsticks=$(YARD_COMMIT)"' \
 	  -DPR_CC='"$(CC) + nvcc"' -DPR_CFLAGS='"host: $(CFLAGS_HOST); nvcc: $(NVCC_FLAGS)"' -c $< -o $@
