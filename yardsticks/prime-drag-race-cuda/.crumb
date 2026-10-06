@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "dir_path": "./yardsticks/prime-drag-race-cuda",
+  "purpose": {
+    "summary": "Outside CUDA yardstick for the AIEN Prime Drag Race: mirrors the AIEN native GPU sieve kernel algorithm; outside AIEN, never linked into AIEN binaries",
+    "created_by": "AIEN",
+    "session_id": "prime-drag-race",
+    "created_at": "2026-10-05T19:00:00Z"
+  },
+  "parent": {
+    "canonical": "./yardsticks",
+    "name": "yardsticks"
+  },
+  "invariants": [
+    "outside AIEN; never linked into AIEN binaries",
+    "builds against omega bench/prime_race protocol via OMEGA_DIR, never copies it",
+    "must not be executed outside a quiet-flag window (GPU)"
+  ],
+  "whispers": []
+}
