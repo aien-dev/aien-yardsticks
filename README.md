@@ -9,3 +9,5 @@ Outside yardsticks AIEN is measured against (MAX, llama.cpp, vLLM). Never part o
 | CUDA mirror of the AIEN native prime sieve kernel (Prime Drag Race) | `yardsticks/prime-drag-race-cuda/` |
 
 Python is tolerated here only until it is replaced by Rust.
+
+> Superseded 2026-10-09: the Python here is retained as frozen historical evidence, not part of active AIEN execution, and is not scheduled for deletion. See [`HISTORICAL-PYTHON.md`](HISTORICAL-PYTHON.md).
