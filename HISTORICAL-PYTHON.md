@@ -8,7 +8,7 @@ Operator decision, Drake, 2026-10-09 (recorded against aien-dev/aien-yardsticks#
 
 1. The retained files are marked HISTORICAL — NOT PART OF ACTIVE AIEN EXECUTION (this file).
 2. Original source bytes, receipts, hashes, and historical test outcomes are preserved. No `.py` file is modified by this marking.
-3. No production entry point, active build, CI qualification workflow, or current runtime depends on these files, with one exception that is disclosed below ("Known operational reference").
+3. No production entry point, active build, CI qualification workflow, or current runtime depends on these files, with no known exception since 2026-10-10 (the former cockpit exception is described below under "Known operational reference" as resolved).
 4. Historical evidence is not altered to conform to today's standards. The older notes in the READMEs ("scheduled for replacement by Rust") are kept as written; they are superseded by this decision.
 5. Scoped claim: the enforceable claim is that AIEN's **active trusted execution path** is Python-free. This repository is **not** claimed to be Python-free.
 6. Reactivating, replacing, or requalifying any of these files (including the Rust replacement proposed in aien-yardsticks#2) needs a separate task and new evidence. No Rust rewrite and no deletion is made or implied here.
@@ -32,6 +32,8 @@ All hashes are of the files at repository commit `765eec0` (default branch `main
 Other tracked files that mention Python and are left as written: `yardsticks/modular-nemotron-h-kvexp/pyproject.toml`, the two yardstick READMEs. The CUDA yardstick (`yardsticks/prime-drag-race-cuda/`) has no Python.
 
 ## Known operational reference (disclosed, not hidden)
+
+Resolved 2026-10-10: aien-sovereign-core#371 (main 885e42f, closes sc#369) removed the launcher script and made the cockpit refuse to start or restart `max-server`; the cockpit only observes or stops an instance started by hand outside AIEN. The paragraph below is kept as the historical description of the former wiring.
 
 `scripts/start_max_lightning_18006.sh` in aien-dev/aien-sovereign-core (and the home-directory copy that `crates/spark-cockpit-rs` launches on a "start"/"restart" of `max-server`) starts the outside Modular MAX server with `--custom-architectures .../aien-yardsticks/yardsticks/modular-nemotron-h-kvexp`. That loads this adapter's Python inside MAX, an outside yardstick server, not an AIEN-built component. This marking does not change that script. Whether the MAX launch is inside the "active trusted execution path" is an operator question and is reported separately.
 
