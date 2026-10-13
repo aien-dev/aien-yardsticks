@@ -1,6 +1,6 @@
 # aien-yardsticks
 
-Outside yardsticks AIEN is measured against (MAX, llama.cpp, vLLM). Never part of AIEN. Nothing here ships in AIEN.
+Outside yardsticks AIEN is measured against. Today this repo holds a Modular MAX adapter, a Hugging Face Transformers reference oracle and a CUDA mirror of an AIEN kernel. There is no llama.cpp or vLLM yardstick here. Never part of AIEN. Nothing here ships in AIEN.
 
 | Yardstick | Path |
 |---|---|
@@ -8,6 +8,4 @@ Outside yardsticks AIEN is measured against (MAX, llama.cpp, vLLM). Never part o
 | TinyLlama reference oracle (HF Transformers, CPU FP32) | `yardsticks/tinyllama-oracle/` |
 | CUDA mirror of the AIEN native prime sieve kernel (Prime Drag Race) | `yardsticks/prime-drag-race-cuda/` |
 
-Python is tolerated here only until it is replaced by Rust.
-
-> Superseded 2026-10-09: the Python here is retained as frozen historical evidence, not part of active AIEN execution, and is not scheduled for deletion. See [`HISTORICAL-PYTHON.md`](HISTORICAL-PYTHON.md).
+The Python here is retained as frozen historical evidence, not part of active AIEN execution, and is not scheduled for deletion. No Rust replacement has been built or is scheduled (the proposal, aien-yardsticks issue #2, was closed on 2026-10-09 in favour of keeping the Python as historical evidence). See [`HISTORICAL-PYTHON.md`](HISTORICAL-PYTHON.md).

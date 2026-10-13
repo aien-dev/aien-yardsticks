@@ -34,7 +34,7 @@ This satisfies the FlashAttention kernel constraint without altering model activ
 ## Key Features
 
 1. **Native Dynamic Expansion**: Replicates KV heads on the fly during safe tensor loading and state dict conversion.
-2. **Offline PEFT LoRA Folding**: Set `MAX_LORA_DIR` to fold LoRA adapters (A and B matrices) directly into base weights prior to QKV fusion, eliminating runtime LoRA overhead.
+2. **Offline PEFT LoRA Folding**: Set `ATLAS_LORA_DIR` to fold LoRA adapters (A and B matrices) directly into base weights prior to QKV fusion, eliminating runtime LoRA overhead.
 3. **Lazy Registration Override**: Overrides default `NemotronHForCausalLM` registration within the MAX pipeline registry to ensure transparent resolution from standard model checkpoints.
 
 ## Installation & Usage
