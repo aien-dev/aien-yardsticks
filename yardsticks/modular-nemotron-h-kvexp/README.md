@@ -1,6 +1,7 @@
 > **YARDSTICK ONLY. Never part of AIEN. Nothing here ships in AIEN.**
 >
 > This is the Nemotron-H KV-head-expansion comparison adapter for Modular MAX, kept so AIEN can be measured against MAX.
+> Modular MAX was removed from AIEN on 2026-10-15. This adapter is a frozen record only and is no longer run; the install, serve and test steps below are historical, so do not follow them.
 > It was moved here, with its git history, from `aien-dev/aien-sovereign-core` (commit `5fdab70`, path `modular/nemotron_h_kvexp`) because AIEN repos may contain no Python.
 > The Python in this folder is scheduled for replacement by Rust (see the "Replace the Python yardstick with Rust" issue in this repo).
 
