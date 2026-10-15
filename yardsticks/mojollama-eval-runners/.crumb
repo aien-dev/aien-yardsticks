@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "dir_path": "./yardsticks/mojollama-eval-runners",
+  "purpose": {
+    "summary": "Frozen copy of the MojoLlama accuracy eval runners (MMLU, GSM8K, C-Eval, HellaSwag, ARC, BBH, HumanEval); outside AIEN, never linked into AIEN binaries",
+    "created_by": "AIEN",
+    "session_id": "cleanup-2026-10-15",
+    "created_at": "2026-10-15T00:00:00Z"
+  },
+  "parent": {
+    "canonical": "./yardsticks",
+    "name": "yardsticks"
+  },
+  "invariants": [
+    "outside AIEN; never linked into AIEN binaries",
+    "files under eval/ are a byte-for-byte copy of aien-dev/MojoLlama src/mojollama/eval/ at cb281d1e8d906d5cf616c3116ef3d43eab29d6ba; do not edit in place",
+    "historical evidence under HISTORICAL-PYTHON.md; reactivating needs a separate task"
+  ],
+  "whispers": []
+}

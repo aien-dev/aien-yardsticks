@@ -1,6 +1,6 @@
 # HISTORICAL — NOT PART OF ACTIVE AIEN EXECUTION
 
-The nine Python files listed below are retained, byte for byte, as frozen historical evidence of two outside yardsticks (a Modular MAX Nemotron-H KV-head-expansion adapter and a TinyLlama reference-oracle generator). They are not part of any active AIEN build, qualification run, CI workflow, or runtime.
+The Python files listed below (nine marked on 2026-10-09, eleven added on 2026-10-15) are retained, byte for byte, as frozen historical evidence of outside yardsticks (a Modular MAX Nemotron-H KV-head-expansion adapter, a TinyLlama reference-oracle generator and the MojoLlama accuracy eval runners). They are not part of any active AIEN build, qualification run, CI workflow, or runtime.
 
 ## Decision
 
@@ -36,6 +36,24 @@ Other tracked files that mention Python and are left as written: `yardsticks/mod
 Resolved 2026-10-10: aien-sovereign-core#371 (main 885e42f, closes sc#369) removed the launcher script and made the cockpit refuse to start or restart `max-server`; the cockpit only observes or stops an instance started by hand outside AIEN. The paragraph below is kept as the historical description of the former wiring.
 
 `scripts/start_max_lightning_18006.sh` in aien-dev/aien-sovereign-core (and the home-directory copy that `crates/spark-cockpit-rs` launches on a "start"/"restart" of `max-server`) starts the outside Modular MAX server with `--custom-architectures .../aien-yardsticks/yardsticks/modular-nemotron-h-kvexp`. That loads this adapter's Python inside MAX, an outside yardstick server, not an AIEN-built component. This marking does not change that script. Whether the MAX launch is inside the "active trusted execution path" is an operator question and is reported separately.
+
+## Added 2026-10-15: MojoLlama eval runners
+
+On 2026-10-15 AIEN dropped Mojo and MAX and aien-dev/MojoLlama was archived. Its accuracy eval runners are plain standard-library Python with no Mojo or MAX imports, so they were copied here byte for byte from `src/mojollama/eval/` at MojoLlama commit `cb281d1e8d906d5cf616c3116ef3d43eab29d6ba`. They are held under the same terms as the files above: historical evidence, not part of active AIEN execution, and reactivating them needs a separate task.
+
+| Path | SHA-256 | Git blob |
+|---|---|---|
+| `yardsticks/mojollama-eval-runners/eval/arc.py` | `e95e9664f750c313a3593947d288cdd3787f17ed215cd37ce87b8e0c12230865` | `97d0af16286b16cc473d7d474d0921fd41ed2a57` |
+| `yardsticks/mojollama-eval-runners/eval/base.py` | `31a710e7c4307d5bec7df2a0e6643c31f8a460473357ecaac236beb17de104be` | `b08579e6cb4e4d8b129d9c50588916039b5fee96` |
+| `yardsticks/mojollama-eval-runners/eval/bbh.py` | `f477e4e56bae6523b83cb41a514460b277efef22032c9c3b138bd14060bcfffb` | `b8093275167ef807a49dfc5e40bd45053d12b619` |
+| `yardsticks/mojollama-eval-runners/eval/ceval.py` | `38c1fac7f3e768b739329c48fb89f5c71e67b00e4f6013a9487510652af4473d` | `dbf4cd338b04858c47020c5bfe4c27c5f08bffd6` |
+| `yardsticks/mojollama-eval-runners/eval/dataset.py` | `fbca09a9b8f5019d185474894962ec8eafd181ac96b3973410bfd21820e0d1fc` | `28d1270d880ee3a041f549035388d8ad03de0230` |
+| `yardsticks/mojollama-eval-runners/eval/gsm8k.py` | `904a0314d3afc72277ecfb3a9ecf1b2615b6a212281ab174cef1621fc3fba9b2` | `f8bea4f89eb55224273c607e027410dc4a49007f` |
+| `yardsticks/mojollama-eval-runners/eval/hellaswag.py` | `97672bd091a7a3070a2f77e0fe08c0365dfdf633f2dd795dabe5b6ba1afbef40` | `d01e1bce542903ad74ab2cfbc360049374dafe8c` |
+| `yardsticks/mojollama-eval-runners/eval/humaneval.py` | `5cb5be00798595782fc0a814c1c318c52e1c53ed017c9e816dc429bd8251b8ed` | `d4f81ba45e8a7106ea62157aaa30bfd6d04cf3ad` |
+| `yardsticks/mojollama-eval-runners/eval/__init__.py` | `358906e04b113df64ff8e25bda8de365d71342b0ad3678fcf788d2e3ccbcf81a` | `8b98a3414bf60c87e224c6aa6731d0f4e0cde1c4` |
+| `yardsticks/mojollama-eval-runners/eval/mmlu.py` | `9353bae67fb9255f4256ef000e447d62457e67393ea956b2ac80f695656f5690` | `8d6e5991264e1a85c0429e8334b122808987b2eb` |
+| `yardsticks/mojollama-eval-runners/eval/orchestrator.py` | `83ec90920e6868432c300f81ae75e03a1d9c6a4679d494f4b5ea58fe9a940375` | `aab30a01aa7ef4b459f4fdc34ca6621a45fbb785` |
 
 ## Rust replacement
 
