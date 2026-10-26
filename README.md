@@ -1,5 +1,7 @@
 # aien-yardsticks
 
+> Archived: read-only history. Nothing here ships in AienOS.
+
 Outside yardsticks AIEN is measured against. Today this repo holds a Modular MAX adapter, a Hugging Face Transformers reference oracle, a CUDA mirror of an AIEN kernel and a frozen copy of the MojoLlama accuracy eval runners. There is no llama.cpp or vLLM yardstick here. Never part of AIEN. Nothing here ships in AIEN.
 
 Modular MAX and Mojo were removed from AIEN on 2026-10-15. The Modular MAX adapter below is kept only as a frozen record and is no longer run.
