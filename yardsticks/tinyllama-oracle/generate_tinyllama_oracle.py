@@ -20,10 +20,10 @@ from transformers.models.llama import modeling_llama
 import safetensors.torch
 
 
-PINNED_SNAPSHOT = (
-    "/home/drakestapleton/.cache/huggingface/hub/"
+PINNED_SNAPSHOT = os.path.join(
+    os.environ.get("HF_HUB_CACHE", os.path.expanduser("~/.cache/huggingface/hub")),
     "models--TinyLlama--TinyLlama-1.1B-Chat-v1.0/snapshots/"
-    "fe8a4ea1ffedaf415f4da2f062534de366a451e6"
+    "fe8a4ea1ffedaf415f4da2f062534de366a451e6",
 )
 
 CANONICAL_PROMPT = (
